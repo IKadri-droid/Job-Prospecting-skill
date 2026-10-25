@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="{{lang}}">
+<head>
+<meta charset="utf-8">
+<title>{{sender_name}} — {{subject}}</title>
+<style>
+  /* Classic letter: sender top left, employer on the right, place and date, subject, body, signature at the bottom.
+     Plain text only (no bold): bold keywords look machine-made. */
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; font-size: 10.5pt; line-height: 1.6;
+         color: #1f2328; text-rendering: geometricPrecision; }
+  .page { width: 210mm; height: 297mm; padding: 22mm 22mm 24mm; display: flex; flex-direction: column; overflow: hidden; }
+  .sender .name, .signature .name { font-size: 12pt; color: #12355b; font-weight: 600; }
+  .recipient, .place-date, .signature { align-self: flex-end; width: 72mm; }
+  .recipient { margin-top: 10mm; }
+  .place-date { margin-top: 9mm; }
+  .subject { margin: 11mm 0 7mm; }
+  .body p { margin: 0 0 4mm; text-align: justify; hyphens: auto; }
+  .signature { margin-top: auto; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="sender"><div class="name">{{sender_name}}</div>{{{sender_lines}}}</div>
+  <div class="recipient">{{{recipient_lines}}}</div>
+  <div class="place-date">{{place_date}}</div>
+  <div class="subject">{{subject}}</div>
+  <div class="body">
+    <p>{{salutation}}</p>
+    {{{body}}}
+    <p>{{closing}}</p>
+  </div>
+  <div class="signature"><div class="name">{{sender_name}}</div></div>
+</div>
+</body>
+</html>

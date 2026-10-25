@@ -1,0 +1,21 @@
+{
+  "lang": "en",
+  "full_name": "Sam Example",
+  "headline": "Apprentice baker — 2-year work-study from September",
+  "contact_line": "Lyon · Phone: +33 6 00 00 00 00 · E-mail: sam.example@example.org",
+  "summary": "<p>Vocational student who enjoys early-morning work and precise recipes. Looking for a work-study placement in a bakery where I can prepare bread and pastries and help in the shop.</p>",
+  "t_skills": "Skills",
+  "skills": "<ul><li>Bread and viennoiserie basics — I've done it a few times</li><li>Food hygiene rules — I have some basics</li><li>Cash register and customer service — I do it regularly</li></ul>",
+  "t_experience": "Experience",
+  "experience": "<p><strong>Seasonal sales assistant</strong>, Example Bakery, Lyon — July–August 2025</p><ul><li>Served about 80 customers a day at the counter and handled payments.</li><li>Helped the bakers shape baguettes on weekend mornings from 5 a.m.</li></ul>",
+  "t_projects": "Projects",
+  "projects": "",
+  "t_education": "Education",
+  "education": "<p><strong>Vocational certificate in baking</strong> (in progress), Example Trade School, Lyon — 2025–2027</p>",
+  "t_certificates": "Certificates",
+  "certificates": "<ul><li>First aid certificate (obtained, 2024)</li></ul>",
+  "t_languages": "Languages",
+  "languages": "French: native · English: intermediate (spoken)",
+  "t_interests": "Interests",
+  "interests": "Cooking for friends, cycling"
+}

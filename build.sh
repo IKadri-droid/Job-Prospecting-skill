@@ -9,7 +9,7 @@ import sys, zipfile, pathlib
 nom = sys.argv[1]
 with zipfile.ZipFile(f'../dist/{nom}.skill', 'w', zipfile.ZIP_DEFLATED) as z:
     for f in sorted(pathlib.Path(nom).rglob('*')):
-        if f.is_file():
+        if f.is_file() and '__pycache__' not in f.parts:
             z.write(f, f.as_posix())
 " "$s")
   echo "dist/$s.skill"

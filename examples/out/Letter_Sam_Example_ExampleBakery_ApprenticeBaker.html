@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Sam Example — Application — Apprentice baker — work-study from September</title>
+<style>
+  /* Classic letter: sender top left, employer on the right, place and date, subject, body, signature at the bottom.
+     Plain text only (no bold): bold keywords look machine-made. */
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif; font-size: 10.5pt; line-height: 1.6;
+         color: #1f2328; text-rendering: geometricPrecision; }
+  .page { width: 210mm; height: 297mm; padding: 22mm 22mm 24mm; display: flex; flex-direction: column; overflow: hidden; }
+  .sender .name, .signature .name { font-size: 12pt; color: #12355b; font-weight: 600; }
+  .recipient, .place-date, .signature { align-self: flex-end; width: 72mm; }
+  .recipient { margin-top: 10mm; }
+  .place-date { margin-top: 9mm; }
+  .subject { margin: 11mm 0 7mm; }
+  .body p { margin: 0 0 4mm; text-align: justify; hyphens: auto; }
+  .signature { margin-top: auto; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="sender"><div class="name">Sam Example</div>Lyon<br>+33 6 00 00 00 00<br>sam.example@example.org</div>
+  <div class="recipient">Example Bakery<br>Recruitment<br>Lyon</div>
+  <div class="place-date">Lyon, 3 November 2026</div>
+  <div class="subject">Application — Apprentice baker — work-study from September</div>
+  <div class="body">
+    <p>Dear Sir or Madam,</p>
+    <p>Your offer for an apprentice baker caught my attention because it describes exactly the work I want to learn: preparing bread and pastries from five in the morning, helping in the shop and following strict hygiene rules. A neighbourhood bakery that bakes everything on site is the place where I can learn the trade properly, gesture by gesture, with people who take the time to explain and who care about the quality of what they sell every morning.</p><p>Last summer I worked as a seasonal sales assistant in a bakery in Lyon. I served about eighty customers a day and handled payments, which taught me to stay calm and friendly when the queue grows. On weekend mornings I also helped the bakers shape baguettes from five o'clock: that is where I discovered how much precision and regularity the job requires, and that early starts suit me. At school, my vocational training in baking gives me the basics of dough, fermentation and hygiene that I now want to practise every week.</p><p>I am in the first year of a vocational certificate in baking and can start the work-study contract in September, with the rhythm set by the school. I live twenty minutes away by bike and I am used to arriving on time for early shifts. My first aid certificate and my experience at the counter would also help in the shop. I would be glad to meet you and to show you what I have learned so far, at the time that suits you best.</p>
+    <p>Yours faithfully,</p>
+  </div>
+  <div class="signature"><div class="name">Sam Example</div></div>
+</div>
+</body>
+</html>

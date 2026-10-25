@@ -1,0 +1,11 @@
+{
+  "lang": "en",
+  "sender_name": "Sam Example",
+  "sender_lines": "Lyon<br>+33 6 00 00 00 00<br>sam.example@example.org",
+  "recipient_lines": "Example Bakery<br>Recruitment<br>Lyon",
+  "place_date": "Lyon, 3 November 2026",
+  "subject": "Application — Apprentice baker — work-study from September",
+  "salutation": "Dear Sir or Madam,",
+  "body": "<p>Your offer for an apprentice baker caught my attention because it describes exactly the work I want to learn: preparing bread and pastries from five in the morning, helping in the shop and following strict hygiene rules. A neighbourhood bakery that bakes everything on site is the place where I can learn the trade properly, gesture by gesture, with people who take the time to explain and who care about the quality of what they sell every morning.</p><p>Last summer I worked as a seasonal sales assistant in a bakery in Lyon. I served about eighty customers a day and handled payments, which taught me to stay calm and friendly when the queue grows. On weekend mornings I also helped the bakers shape baguettes from five o'clock: that is where I discovered how much precision and regularity the job requires, and that early starts suit me. At school, my vocational training in baking gives me the basics of dough, fermentation and hygiene that I now want to practise every week.</p><p>I am in the first year of a vocational certificate in baking and can start the work-study contract in September, with the rhythm set by the school. I live twenty minutes away by bike and I am used to arriving on time for early shifts. My first aid certificate and my experience at the counter would also help in the shop. I would be glad to meet you and to show you what I have learned so far, at the time that suits you best.</p>",
+  "closing": "Yours faithfully,"
+}

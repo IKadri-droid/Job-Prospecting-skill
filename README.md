@@ -1,14 +1,30 @@
 # Job Prospecting skill
 
-A skill for Claude that helps **anyone** prepare their job applications — any trade, any country, any background:
-a short interview (7 steps, one simple question at a time), then a profile, a base CV, CVs and cover letters
-tailored to each offer, a daily job search, a tracking table, reminders, and an optional **mailbox setup**
-(Gmail, Outlook, Yahoo, iCloud, Proton or any other provider) to follow replies and job alerts — **read-only**.
+[![tests](https://github.com/IKadri-droid/Job-Prospecting-skill/actions/workflows/tests.yml/badge.svg)](https://github.com/IKadri-droid/Job-Prospecting-skill/actions/workflows/tests.yml)
 
-> 🇫🇷 Un skill pour Claude qui aide n'importe qui à préparer ses candidatures, quel que soit le métier ou le pays :
-> un entretien en 7 étapes (une question simple à la fois), puis profil, CV de base, CV et lettres adaptés à chaque
-> offre, recherche d'offres, suivi, relances, et en option l'accompagnement de la boîte mail (Gmail, Outlook, Yahoo,
-> iCloud, Proton ou autre) pour suivre les réponses et les alertes emploi, **en lecture seule**.
+**You answer, it prepares. You approve, you apply.**
+
+A skill for Claude that helps **anyone** prepare real job applications — any trade, any country, any background.
+A short interview (fast mode in 3 questions, or 7 simple steps, one question at a time), then a profile, a base CV,
+a CV and a cover letter **tailored to each offer**, a job search, spontaneous applications, a tracking table,
+reminders, and an optional **mailbox setup** (Gmail, Outlook, Yahoo, iCloud, Proton or any other) to follow replies
+and job alerts — **read-only**.
+
+> 🇫🇷 **Tu réponds, il prépare. Tu valides, tu postules.** Un skill pour Claude qui aide n'importe qui à préparer de
+> vraies candidatures, quel que soit le métier ou le pays : un entretien (mode rapide en 3 questions, ou 7 étapes
+> simples), puis profil, CV de base, CV et lettre adaptés à chaque offre, recherche d'offres, candidatures
+> spontanées, suivi, relances, et en option l'accompagnement de la boîte mail (Gmail, Outlook, Yahoo, iCloud,
+> Proton ou autre), **en lecture seule**.
+
+## Simple for the person, solid behind the scenes
+The person only sees short questions, clear summaries and finished documents. Behind the scenes, Claude works with:
+- **templates** — a one-column CV readable by screening tools (ATS) and a classic cover letter, never an improvised layout;
+- **guides** — writing (bullets that prove something, keywords, banned stock phrases), CV customs for 15+ countries,
+  job search (official sources, scoring, report format), mailbox setup per provider, a quality checklist;
+- **scripts** (dependency-free Python, Windows/macOS/Linux) — fill templates safely, render PDFs, **check every
+  document before the person sees it** (unfinished text, skills they don't have, certifications absent from their
+  profile, stock phrases, letter length, page count), keep the tracking table and list reminders due in working days;
+- **tests** — unit tests for the scripts (run on every push) and 10 behaviour cases in `evals/evals.json`.
 
 ## What it never does
 - **Makes nothing up**: no skill, diploma or experience the person did not give. Missing items are marked [TO COMPLETE].
@@ -16,13 +32,18 @@ tailored to each offer, a daily job search, a tracking table, reminders, and an 
 - **Never asks for a password**, app password, token or ID document in the chat.
 - **No automatic collection** from social networks or sites that forbid it (job alerts by e-mail are used instead).
 - **No guessed contacts**, and respect for each country's laws and CV customs.
+- **No false promises**: it says what is possible with the person's equipment (phone only, Claude app, Claude Code).
 
 ## Contents
 | Path | What |
 |---|---|
-| `skills/job-prospecting/SKILL.md` | the skill: interview, rules, documents, search, applications |
-| `skills/job-prospecting/references/email-integration.md` | mailbox setup per provider (folders and rules, read-only automatic reading, job alerts, matching replies, revoking access) |
+| `skills/job-prospecting/SKILL.md` | the skill: pace (fast/full), interview, rules, documents, search, applications |
+| `skills/job-prospecting/references/` | `writing-guide`, `cv-formats-by-country`, `search-guide`, `email-integration`, `quality-checklist` |
+| `skills/job-prospecting/templates/` | CV (one column), cover letter, profile, search report, tracking table |
+| `skills/job-prospecting/scripts/` | `fill_template.py`, `render_pdf.py`, `check_documents.py`, `tracker.py` |
 | `skills/job/SKILL.md` | optional shortcut: typing `/job` launches the interview |
+| `examples/` | a fictional CV and letter (JSON → HTML → PDF) |
+| `tests/`, `evals/` | script tests, behaviour cases |
 | `build.sh` | builds `dist/job-prospecting.skill` and `dist/job.skill` to upload |
 
 ## Install
@@ -34,12 +55,19 @@ choose `dist/job-prospecting.skill` (and `dist/job.skill` for the `/job` shortcu
 mkdir -p ~/.claude/skills
 cp -r skills/job-prospecting skills/job ~/.claude/skills/
 ```
-Then start a conversation with "I'm looking for a job" (or `/job`).
+Then say "I'm looking for a job" (or `/job`).
 
 ## Use
-Just say what you are looking for, in any language ("je cherche une alternance", "I need a summer job",
-"busco trabajo"…). The skill starts in English, then asks which language you want for the conversation and for the
-documents. You can answer "skip" at any time, and pick up later where you left off.
+Say what you are looking for, in any language ("je cherche une alternance", "I need a summer job", "busco trabajo",
+"ich suche eine Ausbildung"…). The skill starts in English, asks which language you want for the conversation and for
+the documents, then whether you want to go fast or take 15 minutes. You can answer "skip" at any time and pick up
+later where you left off.
+
+## Develop
+```bash
+python3 tests/test_scripts.py                      # script tests (no PDF engine needed)
+python3 skills/job-prospecting/scripts/render_pdf.py --which   # PDF engines found on this computer
+```
 
 ## License
 MIT — see `LICENSE`.
