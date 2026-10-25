@@ -23,7 +23,7 @@ class FillTemplate(unittest.TestCase):
             j, out = Path(d, "d.json"), Path(d, "out.html")
             j.write_text(json.dumps(data), encoding="utf-8")
             r = run(SKILL / "scripts/fill_template.py", SKILL / "templates" / template, j, "-o", out)
-            return r, (out.read_text() if out.exists() else "")
+            return r, (out.read_text(encoding="utf-8") if out.exists() else "")
 
     def sample(self):
         return json.loads((EX / "sample-cv.json").read_text(encoding="utf-8"))
@@ -93,7 +93,7 @@ class Tracker(unittest.TestCase):
             t = SKILL / "scripts/tracker.py"
             self.assertEqual(run(t, "add", "--employer", "Example Bakery", "--title", "Apprentice", cwd=d).returncode, 0)
             self.assertNotEqual(run(t, "add", "--employer", "Example Bakery", "--title", "Apprentice", cwd=d).returncode, 0)
-            ident = Path(d, "tracking.csv").read_text().splitlines()[1].split(",")[0]
+            ident = Path(d, "tracking.csv").read_text(encoding="utf-8").splitlines()[1].split(",")[0]
             run(t, "set", ident, "status=sent", "sent_on=2026-11-02", cwd=d)          # a Monday
             self.assertNotIn(ident, run(t, "due", "--today", "2026-11-10", cwd=d).stdout)
             self.assertIn("2026-11-11", run(t, "due", "--today", "2026-11-11", cwd=d).stdout)
