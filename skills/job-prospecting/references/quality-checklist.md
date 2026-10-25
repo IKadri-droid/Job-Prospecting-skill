@@ -16,6 +16,7 @@ python3 scripts/check_documents.py CV_….pdf Letter_….pdf --profile profile.m
 
 ## Fit with the offer
 - [ ] The CV title and summary use the offer's job title and 2–3 mission phrases.
+- [ ] Each experience starts with the real job title and level of responsibility; figures only support it.
 - [ ] The most relevant skills and achievements come first.
 - [ ] Letter paragraph 1 cites something real from the posting (or, spontaneous, from the organization's public info).
 

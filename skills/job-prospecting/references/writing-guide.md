@@ -21,14 +21,28 @@ From the posting, extract into a short working note (not shown to the person unl
 | Title | the offer's job title (or the closest honest one) + contract + availability, e.g. "Apprentice electrician — 2-year work-study from September" |
 | Summary (2–3 lines) | who they are + what they want, reusing 2–3 key phrases of the mission; no adjectives they did not give |
 | Skills | reorder so the offer's keywords come first; use the person's validated sentence ("I do it regularly"…) as the level; never a percentage, star or bar |
-| Achievements / experience | keep the 2–4 most relevant first; rewrite bullets with the offer's vocabulary when it describes what they really did |
+| Achievements / experience | keep the 2–4 most relevant first; each entry starts with the **job title** (see below); rewrite bullets with the offer's vocabulary when it describes what they really did |
 | Interests (optional) | only the ones the person accepted to show; put first the one closest to the job or the employer |
 
 Everything else stays identical to the base CV.
 
+### Title first: recruiters read the role before the numbers
+Recruiters scan the **job title and level of responsibility** first ("Head chef", "Sous-chef", "Team leader",
+"Nurse's aide", "Site foreman"): it tells them in one second what the person can take on. Figures come after, to
+support the title, never to replace it.
+- Each experience starts with the title **as the employer would name it**, then the organization and dates:
+  "**Head chef** — Example Bistro, Lyon — 2022–2025".
+- The title must be the real one. If the person did the job without the title (e.g. ran the kitchen alone on
+  weekends), never upgrade the title: describe the responsibility instead ("Cook — in charge of the kitchen on
+  weekends, team of 3"). An honest acting role can be written only if the person confirms it ("Acting head chef").
+- In the summary and the CV headline, lead with the role too: "Head chef with 8 years in bistro cooking", not
+  "Cook who prepared 200 meals a day".
+- Then the bullets give the scope and results that make the title credible.
+
 ### Bullets that prove something
-Formula: **action verb + what + for whom/with what + result or scale** (only if the person gave it).
-- Weak: "Responsible for the kitchen." → Strong: "Prepared 120 lunches a day in a team of 4, following food-safety rules."
+Formula: **action verb + what + for whom/with what + result or scale** (only if the person gave it). Responsibility
+first (who they managed, what they were in charge of), volume second.
+- Weak: "Responsible for the kitchen." → Strong: "Led a kitchen team of 4 and designed the weekly menu; about 120 covers a day."
 - Weak: "Customer service." → Strong: "Welcomed and advised about 60 customers a day; handled returns and payments."
 - Weak: "School project in web development." → Strong: "School project: built a booking website with a teammate (HTML, CSS, a database), presented to 30 people."
 Never invent a number. If the person has no figure, describe the scope ("every morning", "alone on weekends").
