@@ -10,11 +10,6 @@ a CV and a cover letter **tailored to each offer**, a job search, spontaneous ap
 reminders, and an optional **mailbox setup** (Gmail, Outlook, Yahoo, iCloud, Proton or any other) to follow replies
 and job alerts — **read-only**.
 
-> 🇫🇷 **Tu réponds, il prépare. Tu valides, tu postules.** Un skill pour Claude qui aide n'importe qui à préparer de
-> vraies candidatures, quel que soit le métier ou le pays : un entretien (mode rapide en 3 questions, ou 7 étapes
-> simples), puis profil, CV de base, CV et lettre adaptés à chaque offre, recherche d'offres, candidatures
-> spontanées, suivi, relances, et en option l'accompagnement de la boîte mail (Gmail, Outlook, Yahoo, iCloud,
-> Proton ou autre), **en lecture seule**.
 
 ## Simple for the person, solid behind the scenes
 The person only sees short questions, clear summaries and finished documents. Behind the scenes, Claude works with:

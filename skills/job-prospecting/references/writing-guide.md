@@ -76,7 +76,9 @@ to the person. Never a fact you cannot point to.
 told as what the person learned or did (a short story), not a list of tools copied from the CV.
 
 **Paragraph 3 — practical + next step**: availability, contract, rhythm (for work-study), mobility (licence,
-transport) when relevant, one real quality shown by an experience, and a proposal to meet.
+transport) when relevant, one real quality shown by an experience, and a proposal to meet. The quality comes only
+from what the person validated (their own soft skills, or facts of their experience such as "trained new staff");
+never an invented trait like "calm under pressure".
 
 **Spontaneous application**: never pretend to answer an offer; say what you noticed about the organization and
 what you can bring; ask whether an opening could exist now or later.
@@ -93,5 +95,17 @@ Replace every adjective by a fact from the profile.
 Follow the tone chosen in Step 7 (very formal / direct / warm) and the phrases the person hates. Vouvoiement /
 formal "you" wherever the language has it, unless the person asks otherwise. Short sentences beat long ones.
 
-## 5. Before showing anything
+## 6. Interests and the recruiter (only with the person's copy of a public profile)
+Goal: a natural common point with the person who recruits, never flattery.
+1. List the recruiter's interests from the public professional information the person copied (rule 6).
+2. Compare them with the interests the person accepted to show (`profile.md`) — the only allowed source.
+3. Few interests (1–3): put first the person's closest real interest, even if approximate (running ↔ trail).
+   Many interests (4+): keep the simplest, most direct match, 2 at most. No match: keep the person's interests,
+   ordered by relevance to the job.
+4. Use the person's own wording, closest to the recruiter's vocabulary.
+Never: add an interest the person does not have, mention the recruiter or their tastes in the CV or the letter
+("like you, I love…"), or store the recruiter's name anywhere shared. Possible conversation topics for an interview
+can be noted for the person only.
+
+## 7. Before showing anything
 Run `quality-checklist.md`. The person reads the final version, not a draft with mistakes.

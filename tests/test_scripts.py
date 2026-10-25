@@ -87,6 +87,29 @@ class CheckDocuments(unittest.TestCase):
         self.assertEqual(r.returncode, 1)
 
 
+class AdaptCv(unittest.TestCase):
+    def adapt(self, changes):
+        with tempfile.TemporaryDirectory() as d:
+            j, out = Path(d, "a.json"), Path(d, "out.html")
+            j.write_text(json.dumps(changes), encoding="utf-8")
+            r = run(SKILL / "scripts/adapt_cv.py", EX / "own-cv-base.html", j, "-o", out)
+            return r, (out.read_text(encoding="utf-8") if out.exists() else "")
+
+    def test_only_zones_change_and_design_kept(self):
+        r, html = self.adapt({"headline": "<p>Apprentice baker — work-study from September</p>",
+                              "interests": "<li>Cooking for friends</li><li>Cycling</li>"})
+        self.assertEqual(r.returncode, 0, r.stderr)
+        self.assertIn("Apprentice baker", html)
+        self.assertIn("grid-template-columns:60mm", html)      # the person's own design is untouched
+
+    def test_refuses_unknown_zone(self):
+        self.assertNotEqual(self.adapt({"photo": "<p>x</p>"})[0].returncode, 0)
+
+    def test_refuses_bold_and_links(self):
+        self.assertNotEqual(self.adapt({"skills": "<ul><li><strong>SAP</strong></li></ul>"})[0].returncode, 0)
+        self.assertNotEqual(self.adapt({"skills": "<ul><li><a href='x'>x</a></li></ul>"})[0].returncode, 0)
+
+
 class Tracker(unittest.TestCase):
     def test_flow(self):
         with tempfile.TemporaryDirectory() as d:

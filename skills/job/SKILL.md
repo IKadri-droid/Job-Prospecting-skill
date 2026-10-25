@@ -1,6 +1,6 @@
 ---
 name: "job"
-description: "Raccourci /job : lance le skill job-prospecting (entretien pour préparer ses candidatures)."
+description: "Shortcut /job: starts the job-prospecting skill (interview to prepare job applications)."
 ---
 
-L'utilisateur a tapé /job. Appelle immédiatement le skill `job-prospecting` avec l'outil Skill et suis ses instructions à la lettre, sans rien ajouter ni résumer ici. Si l'utilisateur a donné des précisions avec la commande, transmets-les au skill comme contexte.
+The user typed /job. Immediately call the `job-prospecting` skill with the Skill tool and follow its instructions exactly, without adding or summarizing anything here. If the user gave details with the command, pass them to the skill as context.

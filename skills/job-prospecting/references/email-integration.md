@@ -34,10 +34,9 @@ Always start with level B: level C reads the folders that level B creates.
 
 ## Level B — folders and rules (all providers)
 
-Create two folders (called "labels" in Gmail): **Applications** (or "Candidatures") and **Job alerts**.
+Create two folders (called "labels" in Gmail): **Applications** and **Job alerts** (name them in the person's language if they prefer).
 Then one rule for each folder:
-- **Applications**: messages containing words like *application, candidature, interview, entretien, recruitment,
-  recrutement* (adapt to the language of the country), or coming from the addresses of companies the person applied to.
+- **Applications**: messages containing words like *application, interview, recruitment* (translated into the language of the country), or coming from the addresses of companies the person applied to.
 - **Job alerts**: messages from the alert senders of the job sites they use (for example LinkedIn job alerts,
   Indeed, the national employment service, trade job boards). Look up the exact sender addresses together.
 
