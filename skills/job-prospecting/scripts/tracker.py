@@ -129,7 +129,7 @@ def main():
     elif a.cmd == "due":
         holidays = set()
         if a.holidays:
-            holidays = {date.fromisoformat(l.strip()) for l in a.holidays.read_text().splitlines() if l.strip()}
+            holidays = {date.fromisoformat(l.strip()) for l in a.holidays.read_text(encoding="utf-8").splitlines() if l.strip()}
         for r in rows:
             if r["status"] in ("sent", "waiting") and r["sent_on"] and not r["reply_on"] and not r["reminder_on"]:
                 due = working_days_after(date.fromisoformat(r["sent_on"]), a.days, holidays)

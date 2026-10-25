@@ -21,12 +21,12 @@ class FillTemplate(unittest.TestCase):
     def fill(self, data, template="cv-one-column.html"):
         with tempfile.TemporaryDirectory() as d:
             j, out = Path(d, "d.json"), Path(d, "out.html")
-            j.write_text(json.dumps(data))
+            j.write_text(json.dumps(data), encoding="utf-8")
             r = run(SKILL / "scripts/fill_template.py", SKILL / "templates" / template, j, "-o", out)
             return r, (out.read_text() if out.exists() else "")
 
     def sample(self):
-        return json.loads((EX / "sample-cv.json").read_text())
+        return json.loads((EX / "sample-cv.json").read_text(encoding="utf-8"))
 
     def test_sample_ok_and_empty_section_removed(self):
         r, html = self.fill(self.sample())
@@ -54,11 +54,11 @@ class FillTemplate(unittest.TestCase):
 
 class CheckDocuments(unittest.TestCase):
     def letter(self, body_extra=""):
-        data = json.loads((EX / "sample-letter.json").read_text())
+        data = json.loads((EX / "sample-letter.json").read_text(encoding="utf-8"))
         data["body"] = data["body"].replace("<p>Your offer", f"<p>{body_extra}Your offer", 1)
         d = tempfile.mkdtemp()
         j, out = Path(d, "d.json"), Path(d, "Letter_Sam_Example_ExampleBakery_ApprenticeBaker.html")
-        j.write_text(json.dumps(data))
+        j.write_text(json.dumps(data), encoding="utf-8")
         r = run(SKILL / "scripts/fill_template.py", SKILL / "templates/cover-letter.html", j, "-o", out)
         self.assertEqual(r.returncode, 0, r.stderr)
         return out
@@ -97,7 +97,7 @@ class Tracker(unittest.TestCase):
             run(t, "set", ident, "status=sent", "sent_on=2026-11-02", cwd=d)          # a Monday
             self.assertNotIn(ident, run(t, "due", "--today", "2026-11-10", cwd=d).stdout)
             self.assertIn("2026-11-11", run(t, "due", "--today", "2026-11-11", cwd=d).stdout)
-            Path(d, "h.txt").write_text("2026-11-11\n")
+            Path(d, "h.txt").write_text("2026-11-11\n", encoding="utf-8")
             self.assertIn("2026-11-12", run(t, "due", "--today", "2026-11-12", "--holidays", "h.txt", cwd=d).stdout)
             run(t, "set", ident, "reminder_on=2026-11-12", cwd=d)
             self.assertNotEqual(run(t, "set", ident, "reminder_on=2026-11-13", cwd=d).returncode, 0)

@@ -7,10 +7,25 @@ jobs:
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
     runs-on: ${{ matrix.os }}
+    env:
+      PYTHONUTF8: "1"
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: python tests/test_scripts.py
-      - run: python -c "import json; d = json.load(open('evals/evals.json', encoding='utf-8')); assert len(d['evals']) >= 10"
+      - name: Script tests
+        shell: bash
+        run: python tests/test_scripts.py > test-output.txt 2>&1 || { cat test-output.txt; exit 1; }
+      - name: Show failures as annotations
+        if: failure()
+        shell: bash
+        run: |
+          python - <<'PY'
+          lines = open("test-output.txt", encoding="utf-8", errors="replace").read().splitlines()
+          keep = [l for l in lines if any(k in l for k in ("FAIL", "ERROR", "Error", "assert", "Traceback", "File \"", "line "))]
+          for l in (keep or lines)[-25:]:
+              print("::error::" + l.replace("%", "%25").replace("\r", "").replace("\n", " ")[:900])
+          PY
+      - name: Behaviour cases are valid
+        run: python -c "import json; d = json.load(open('evals/evals.json', encoding='utf-8')); assert len(d['evals']) >= 10"
