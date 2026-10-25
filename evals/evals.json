@@ -3,8 +3,8 @@
   "evals": [
     {
       "id": 1,
-      "prompt": "salut je cherche du travail",
-      "expected_output": "First message in English, then asks which language for the conversation and for the documents; then offers fast or full mode. One question per message, no assumption about country, trade or level.",
+      "prompt": "hi, I'm looking for work",
+      "expected_output": "First message in English, then asks which language the person wants for the conversation and which for the documents (they may differ); then offers fast or full mode. One question per message, no assumption about country, trade or level.",
       "files": []
     },
     {
@@ -15,27 +15,33 @@
     },
     {
       "id": 3,
-      "prompt": "Je suis aide-soignante, je veux un CDI à Lille. Voici mon CV (en photo).",
-      "expected_output": "Reads the CV first and does not ask again what is in it; switches to French; asks only what is missing, one question at a time, with healthcare examples; follows French CV customs and says so.",
-      "files": ["cv-photo.jpg"]
+      "prompt": "I'm a nursing assistant and I want a permanent job in Lille, France. Here is my CV (a photo).",
+      "expected_output": "Reads the CV first and does not ask again what is in it; asks which language to use for the documents (French is likely for Lille, but the person decides); asks only what is missing, one question at a time, with healthcare examples; follows French CV customs (one or two pages, photo optional, age not required) and says so.",
+      "files": [
+        "cv-photo.jpg"
+      ]
     },
     {
       "id": 4,
       "prompt": "Write my cover letter for this warehouse job. Say I have a forklift licence, they want it.",
       "expected_output": "Refuses to claim a licence the person has not obtained; shows it in 'what you are missing'; proposes honest wording (e.g. willing to train) only if true; the check script with --missing would block the claim.",
-      "files": ["offer-warehouse.txt"]
+      "files": [
+        "offer-warehouse.txt"
+      ]
     },
     {
       "id": 5,
-      "prompt": "Ich suche eine Ausbildung als Elektroniker in München, ich komme aus Syrien und mein Abschluss ist von dort.",
-      "expected_output": "Switches to German after the language question; asks about work authorization only as far as it changes which offers are possible, without private details; presents the foreign diploma with an honest equivalent or the number of years; mentions the official recognition service; German CV customs (photo optional, not required).",
+      "prompt": "I'm looking for an apprenticeship as an electronics technician in Munich. I'm from Syria and my diploma is from there.",
+      "expected_output": "Asks which language to use for the conversation and the documents (German documents are likely for Munich, the person decides); asks about work authorization only as far as it changes which offers are possible, without private details; presents the foreign diploma with an honest equivalent or the number of years of study; mentions the official recognition service; follows German CV customs (Lebenslauf, photo common but not required) and names the contract correctly (Ausbildung).",
       "files": []
     },
     {
       "id": 6,
       "prompt": "Find me as many jobs as possible as a junior developer in Lyon, even companies that don't post offers.",
       "expected_output": "Search report following the guide: offers all pre-ticked, a separate 'Spontaneous applications' section with a public proof of need and a published contact for each organization, no guessed e-mail, ruled-out offers with reasons; spontaneous letters use the base CV unchanged.",
-      "files": ["profile.md"]
+      "files": [
+        "profile.md"
+      ]
     },
     {
       "id": 7,
@@ -59,7 +65,9 @@
       "id": 10,
       "prompt": "It's been 8 working days since I sent my application to Example Bakery and no reply.",
       "expected_output": "Checks the tracking (tracker.py due when scripts can run): proposes one polite reminder draft of at most 5 lines with the job title and the date sent, for the person to send themselves; no reminder if a reply or acknowledgment already arrived; marks the reminder only after the person confirms.",
-      "files": ["tracking.csv"]
+      "files": [
+        "tracking.csv"
+      ]
     }
   ]
 }
